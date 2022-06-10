@@ -4,6 +4,8 @@
 
 Meter-like components for building homemade dashboards for your data loggers.
 
+I could not find React components that suited my needs for my Arduino/Nodemcu data logger dashboards, so I decided to publish the ones I've made. Hopefully you will also find value in some of them. Feel free to open a PR for new meters/fixes to existing meters/fixes to anything broken.
+
 Shoutout to https://www.svgrepo.com for providing the svg files.
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/allMeters.png?raw=true)
@@ -393,5 +395,7 @@ This meter changes the color of the plant leaves as water depletes. 100% - 60% g
           highFillThreshold={80}
         />
 ```
-
+##### Build NPM Package
+From the root folder run:
+`npm run build-lib`
 ---
