@@ -8,7 +8,7 @@ Meter-like components for building homemade dashboards for your data loggers.
 
 
 
-##Install
+#####Install
 `npm install react-sensor-meters`
 
 #####Import Example
@@ -17,7 +17,7 @@ Meter-like components for building homemade dashboards for your data loggers.
 import { TempSimple, Battery, HumidityDropPercent } from "react-sensor-meters";
 ```
 
-_Possible values for import: _
+*Possible values for import:*
 
 - TempLines
 - TempRound
