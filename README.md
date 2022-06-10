@@ -8,10 +8,10 @@ Meter-like components for building homemade dashboards for your data loggers.
 
 
 
-#####Install
+##### Install
 `npm install react-sensor-meters`
 
-#####Import Example
+##### Import Example
 
 ```javascript
 import { TempSimple, Battery, HumidityDropPercent } from "react-sensor-meters";
@@ -66,20 +66,20 @@ image of prop on meter here!!!!!!!!!!!!!!!!!
 
 ---
 
-#####TempRound
+##### TempRound
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempRound.png?raw=true)
 
 
 ---
 
-#####TempSimple
+##### TempSimple
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempSimple.png?raw=true)
 
 ---
 
-#####H20Drop
+##### H20Drop
 !!!! IMPORTANT !!!!!: Water detecting sensors work on an inverse. The higher the number means there is no presense of water. The lower the number means more of a presense of water. This corresponds to the resistance of the sensor.
 
 This component operates on that principal. Give it a higher number, the meter will have low fill. Give it a lower number the meter will have more fill.
@@ -89,7 +89,7 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ---
 
-#####WaterPlant
+##### WaterPlant
 !!!! IMPORTANT !!!!!: Water detecting sensors work on an inverse. The higher the number means there is no presense of water. The lower the number means more of a presense of water. This corresponds to the resistance of the sensor.
 
 This component operates on that principal. Give it a higher number, the meter will have low fill. Give it a lower number the meter will have more fill.
@@ -98,49 +98,49 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ---
 
-#####LightThick
+##### LightThick
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/thickLight.png?raw=true)
 
 ---
 
-#####HumidityDropPercent
+##### HumidityDropPercent
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/humidityDropPercent.png?raw=true)
 
 ---
 
-#####AirQualityMask
+##### AirQualityMask
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityMask.png?raw=true)
 
 ---
 
-#####AirQualityVent
+##### AirQualityVent
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityVent.png?raw=true)
 
 ---
 
-#####Battery
+##### Battery
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/battery.png?raw=true)
 
 ---
 
-#####CarBattery
+##### CarBattery
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/carbattery.png?raw=true)
 
 ---
 
-#####BasicCircle
+##### BasicCircle
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicCircle.png?raw=true)
 
 ---
 
-#####BasicRectangle
+##### BasicRectangle
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicRectangle.png?raw=true)
 
 ---
