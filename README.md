@@ -171,6 +171,8 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 This component operates on that principal. Give it a higher number, the meter will have low fill. Give it a lower number the meter will have more fill.
 
+This meter changes the color of the plant leaves as water depletes. 100% - 60% green leaves = plant is watered, 60% - 30% brown leaves = plant should be water soon, 30% - 0% black leaves = plant has no water.
+
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/waterPlant.png?raw=true)
 
 ```javascript
