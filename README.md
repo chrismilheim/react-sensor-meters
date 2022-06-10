@@ -65,15 +65,21 @@ image of prop on meter here!!!!!!!!!!!!!!!!!
 ## _Meters_
 
 #####TempLines
-Test
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempLines.png?raw=true)
 
 ---
 
 #####TempRound
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempRound.png?raw=true)
+
+
 ---
 
 #####TempSimple
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempSimple.png?raw=true)
 
 ---
 
@@ -82,6 +88,9 @@ Test
 
 This component operates on that principal. Give it a higher number, the meter will have low fill. Give it a lower number the meter will have more fill.
 
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/h20Drop.png?raw=true)
+
 ---
 
 #####WaterPlant
@@ -89,36 +98,53 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 This component operates on that principal. Give it a higher number, the meter will have low fill. Give it a lower number the meter will have more fill.
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/waterPlant.png?raw=true)
+
 ---
 
 #####LightThick
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/thickLight.png?raw=true)
 
 ---
 
 #####HumidityDropPercent
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/humidityDropPercent.png?raw=true)
+
 ---
 
 #####AirQualityMask
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityMask.png?raw=true)
 
 ---
 
 #####AirQualityVent
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityVent.png?raw=true)
+
 ---
 
 #####Battery
+
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/battery.png?raw=true)
 
 ---
 
 #####CarBattery
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/carbattery.png?raw=true)
+
 ---
 
 #####BasicCircle
 
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicCircle.png?raw=true)
+
 ---
 
 #####BasicRectangle
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicRectangle.png?raw=true)
 
 ---
