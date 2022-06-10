@@ -397,5 +397,6 @@ This meter changes the color of the plant leaves as water depletes. 100% - 60% g
 ```
 ##### Build NPM Package
  From the root folder run:
+ 
 `npm run build-lib`
 
