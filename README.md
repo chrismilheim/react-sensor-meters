@@ -10,7 +10,7 @@ Meter-like components for building homemade dashboards for your data loggers.
 
 [TOC]
 
-#####Install
+####Install
 `npm install react-sensor-meters`
 
 #####Import Example
