@@ -33,7 +33,7 @@ import { TempSimple, Battery, HumidityDropPercent } from "react-sensor-meters";
 - BasicCircle
 - BasicRectangle
 
-#####Props (\*_ in Prop Name = required _)
+##### Props (\*_ in Prop Name = required _)
 
 | Prop Name          | Value Type | Description                                                             | Possible Values                          | Examples                            |
 | ------------------ | ---------- | ----------------------------------------------------------------------- | ---------------------------------------- | ----------------------------------- |
@@ -56,7 +56,7 @@ import { TempSimple, Battery, HumidityDropPercent } from "react-sensor-meters";
 
 Default colors are black on white if only using the required props.
 
-image of prop on meter here!!!!!!!!!!!!!!!!!
+![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/propsBreakdown.png?raw=true)
 
 ## _Meters_
 
@@ -64,19 +64,78 @@ image of prop on meter here!!!!!!!!!!!!!!!!!
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempLines.png?raw=true)
 
+```javascript
+ <TempLines
+          data={85}
+          topEndDataLimit={120}
+          animate={false}
+          neon={""}
+          fillColor={"rgb(182, 25, 13)"}
+          backFillColor={"green"}
+          valueColor={"rgb(48, 13, 10)"}
+          labelColor={"orange"}
+          cardColor={"grey"}
+          dotColor={"purple"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"TempLines"}
+          highFillColor={"purple"}
+          highFillThreshold={95}
+        />
+```
+
 ---
 
 ##### TempRound
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempRound.png?raw=true)
 
-
+```javascript
+   <TempRound
+          data={96}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={"red"}
+          backFillColor={"orange"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"blue"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"TempRound"}
+          highFillColor={"purple"}
+          highFillThreshold={95}
+        />
+```
 ---
 
 ##### TempSimple
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/tempSimple.png?raw=true)
 
+```javascript
+  <TempSimple
+          data={92}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={"rgba(49, 78, 55, 0.627)"}
+          backFillColor={"rgba(43, 42, 42, 0.627)"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"blue"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"TempSimple"}
+          highFillColor={"purple"}
+          highFillThreshold={95}
+          borderColor={"purple"}
+        />
+
+```
 ---
 
 ##### H20Drop
@@ -87,6 +146,24 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/h20Drop.png?raw=true)
 
+```javascript
+     <H2ODrop
+          data={1000}
+          topEndDataLimit={2000}
+          animate={false}
+          neon={""}
+          fillColor={"blue"}
+          backFillColor={"green"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"black"}
+          hover={false}
+          gaugeSize={"medium"}
+          labelText={"H20Drop"}
+        />
+```
+
 ---
 
 ##### WaterPlant
@@ -96,11 +173,47 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/waterPlant.png?raw=true)
 
+```javascript
+  <WaterPlant
+          data={400}
+          topEndDataLimit={2000}
+          animate={true}
+          neon={""}
+          fillColor={"blue"}
+          backFillColor={"green"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"WaterPlant"}
+        />
+```
+
 ---
 
 ##### LightThick
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/thickLight.png?raw=true)
+
+```javascript
+ <LightThick
+          data={80}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={" yellow "}
+          backFillColor={"lightgrey"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"black"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"LightThick"}
+        />
+```
 
 ---
 
@@ -108,11 +221,50 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/humidityDropPercent.png?raw=true)
 
+```javascript
+   <HumidityDropPercent
+          data={22}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={"lightblue"}
+          backFillColor={"rgba(43, 42, 42, 0.627)"}
+          valueColor={"blue"}
+          labelColor={"black"}
+          cardColor={"white"}
+          dotColor={"blue"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"HumidityDropPercent "}
+          highFillColor={"purple"}
+          highFillThreshold={95}
+          borderColor={"lightGreen"}
+        />
+```
+
 ---
 
 ##### AirQualityMask
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityMask.png?raw=true)
+
+```javascript
+  <AirQualityMask
+          data={50}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={" yellow "}
+          backFillColor={"lightgrey"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"AirQualityMask"}
+        />
+```
 
 ---
 
@@ -120,11 +272,48 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/airQualityVent.png?raw=true)
 
+```javascript
+ <AirQualityVent
+          data={100}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={" grey "}
+          backFillColor={"lightgrey"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"AirQualityVent"}
+        />
+```
+
 ---
 
 ##### Battery
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/battery.png?raw=true)
+
+```javascript
+  <Battery
+          data={90}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={"lightgreen"}
+          backFillColor={"green"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"Battery "}
+          highFillThreshold={80}
+        />
+```
 
 ---
 
@@ -132,15 +321,73 @@ This component operates on that principal. Give it a higher number, the meter wi
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/carbattery.png?raw=true)
 
+```javascript
+  <CarBattery
+          data={90}
+          topEndDataLimit={120}
+          animate={true}
+          neon={""}
+          fillColor={"black"}
+          backFillColor={"grey"}
+          valueColor={"black"}
+          labelColor={"black"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"CarBattery"}
+          highFillThreshold={80}
+        />
+```
+
 ---
 
 ##### BasicCircle
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicCircle.png?raw=true)
 
+```javascript
+  <BasicCircle
+          data={900}
+          topEndDataLimit={1220}
+          animate={true}
+          neon={""}
+          fillColor={"lightgreen"}
+          backFillColor={"green"}
+          valueColor={"black"}
+          labelColor={"black"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"BasicCircle"}
+          highFillColor={"purple"}
+          highFillThreshold={80}
+        />
+```
+
 ---
 
 ##### BasicRectangle
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/basicRectangle.png?raw=true)
+
+```javascript
+     <BasicRectangle
+          data={500}
+          topEndDataLimit={1000}
+          animate={true}
+          neon={""}
+          fillColor={"lightgreen"}
+          backFillColor={"green"}
+          valueColor={"blue"}
+          labelColor={"blue"}
+          cardColor={"white"}
+          dotColor={"teal"}
+          hover={true}
+          gaugeSize={"medium"}
+          labelText={"BasicRectangle"}
+          highFillThreshold={80}
+        />
+```
 
 ---
