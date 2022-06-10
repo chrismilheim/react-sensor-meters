@@ -4,6 +4,8 @@
 
 Meter-like components for building homemade dashboards for your data loggers.
 
+Shoutout to https://www.svgrepo.com for providing the svg files.
+
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/allMeters.png?raw=true)
 
 
