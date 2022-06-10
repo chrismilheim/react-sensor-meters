@@ -6,11 +6,6 @@ Meter-like components for building homemade dashboards for your data loggers.
 
 ![alt text](https://github.com/chrismilheim/react-sensor-meters/blob/main/components/img/allMeters.png?raw=true)
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
 
 ####Install
 `npm install react-sensor-meters`
