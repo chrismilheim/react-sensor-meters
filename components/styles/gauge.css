@@ -1,0 +1,57 @@
+.sensorCardMedium {
+  transition: 0.3s;
+  width: 290px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgba(43, 42, 42, 0.627);
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+}
+
+.sensorCardSmall {
+  transition: 0.3s;
+  width: 120px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgba(43, 42, 42, 0.627);
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+}
+
+.sensorCardLarge {
+  transition: 0.3s;
+  width: 490px;
+  text-align: center;
+  padding-top: 30px;
+  background-color: rgba(43, 42, 42, 0.627);
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+}
+
+.addDropShadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.59);
+}
+
+.sensorCardMedium:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.tagContainer {
+  padding: 2px 16px;
+  text-align: center;
+}
+
+#Layer_1 {
+  margin-right: 15px;
+}
+
+.sensorTransition {
+  transition: all 0.2s ease-in-out 0.5s;
+  -webkit-transition: all 0.2s ease-in-out 0.5s;
+}
+
+.sensorGrow:hover {
+  transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+}

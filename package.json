@@ -1,0 +1,41 @@
+{
+  "name": "testing-testingtestreact-package",
+  "version": "0.9.0",
+  "description": "Library of common microcontroller sensor gauges",
+  "keywords": [
+    "react",
+    "components",
+    "ui"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ]
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "build-lib": "rollup -c",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel ./components -d dist --copy-files"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-react": "^7.17.12",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.75.6",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "peerDependencies": {},
+  "dependencies": {}
+}
