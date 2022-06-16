@@ -1,5 +1,5 @@
  ![](https://img.shields.io/badge/Build-1.0.0-green) ![](https://img.shields.io/badge/Meters-42-blue) ![](https://img.shields.io/badge/Size-128kB-orange)
- ![](https://img.shields.io/badge/UniqueMeters-14-purple)
+ ![](https://img.shields.io/badge/UniqueMeters-14-purple) ![](https://img.shields.io/badge/LiveDemo-Yes-black)
 
 ## react-sensor-meters
 
