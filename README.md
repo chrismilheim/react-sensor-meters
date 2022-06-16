@@ -3,6 +3,8 @@
 
 ## react-sensor-meters
 
+[LIVE DEMO!!!](https://chrismilheim.github.io/react-sensor-meters-demo/)
+
 Meter-like components for building homemade dashboards for your data loggers.
 
 I could not find React components that suited my needs for my Arduino/Nodemcu data logger dashboards, so I decided to publish the ones I've made. Hopefully you will also find value in some of them. Feel free to open a PR for new meters/fixes to existing meters/fixes to anything broken.
