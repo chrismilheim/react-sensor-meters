@@ -3,7 +3,7 @@
 
 ## react-sensor-meters
 
-[LIVE DEMO!!!](https://chrismilheim.github.io/react-sensor-meters-demo/)
+:red_circle::red_circle::red_circle: [LIVE DEMO!!!](https://chrismilheim.github.io/react-sensor-meters-demo/) :red_circle::red_circle::red_circle:
 
 Meter-like components for building homemade dashboards for your data loggers.
 
