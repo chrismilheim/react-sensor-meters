@@ -3,6 +3,7 @@ import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const TempLines = (props) => {
   const {
     data,
@@ -21,12 +22,13 @@ export const TempLines = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -34,6 +36,13 @@ export const TempLines = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -92,22 +101,21 @@ export const TempLines = (props) => {
           r="2"
           fill={dotColor === undefined ? "white" : dotColor}
         />
-        <text
-          x="23"
-          y="28"
-          fill={valueColor}
-          style={{
-            "font-size": "25%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}°
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-40}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-40}
+        dataType={"date"}
+      />
     </div>
   );
 };

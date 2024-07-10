@@ -3,6 +3,7 @@ import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const LightThick = (props) => {
   const {
     data,
@@ -21,12 +22,13 @@ export const LightThick = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -34,6 +36,13 @@ export const LightThick = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -94,22 +103,21 @@ export const LightThick = (props) => {
           fill={dotColor}
           d="M309.288,73.094c-71.545,0-129.768,58.223-129.768,129.769c0,10.248,8.292,18.538,18.538,18.538    c10.248,0,18.537-8.29,18.537-18.538c0-51.126,41.585-92.69,92.69-92.69c10.248,0,18.538-8.29,18.538-18.538    C327.829,81.387,319.536,73.094,309.288,73.094z"
         />
-        <text
-          x="400"
-          y="575"
-          fill={valueColor}
-          style={{
-            "font-size": "330%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-40}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-40}
+        dataType={"date"}
+      />
     </div>
   );
 };

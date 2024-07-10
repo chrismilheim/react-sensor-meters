@@ -1,14 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const TempLines = (props) => {
   const {
     data,
@@ -27,12 +22,13 @@ export const TempLines = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -40,6 +36,13 @@ export const TempLines = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -87,23 +90,21 @@ export const TempLines = (props) => {
           fill={dotColor}
           d="M105.179,116.739c0-1.228-0.998-2.226-2.23-2.226c-1.231,0-2.23,0.998-2.23,2.226v18.997    c-12.723,1.127-22.697,11.803-22.697,24.816c0,13.764,11.159,24.923,24.927,24.923s24.927-11.159,24.927-24.923    c0-13.013-9.974-23.685-22.697-24.816V116.739z M123.42,160.547c0,11.281-9.183,20.467-20.471,20.467s-20.467-9.183-20.467-20.467    c0-11.026,8.793-19.995,19.719-20.392c0.24,0.086,0.483,0.147,0.748,0.147c0.265,0,0.508-0.061,0.748-0.147    C114.627,140.552,123.42,149.521,123.42,160.547z"
         />
-
-        <text
-          x="150"
-          y="180"
-          fill={valueColor}
-          style={{
-            "font-size": "120%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}°
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-20}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-20}
+        dataType={"date"}
+      />
     </div>
   );
 };

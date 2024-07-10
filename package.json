@@ -1,11 +1,39 @@
 {
-  "name": "testing-testingtestreact-package",
-  "version": "0.9.0",
+  "name": "react-sensor-meters",
+  "version": "2.0.0",
   "description": "Library of common microcontroller sensor gauges",
   "keywords": [
     "react",
     "components",
-    "ui"
+    "ui",
+    "arduino",
+    "nodemcu",
+    "sensor",
+    "temperature",
+    "airquality",
+    "light",
+    "meter",
+    "gauge",
+    "humidity",
+    "water",
+    "battery",
+    "waterPlant",
+    "embedded",
+    "iot",
+    "internet of things",
+    "microcontroller",
+    "sensors",
+    "analog",
+    "digital",
+    "dashboard",
+    "monitoring",
+    "environment",
+    "smart",
+    "arduino uno",
+    "esp8266",
+    "esp32",
+    "dht11",
+    "dht22"
   ],
   "babel": {
     "presets": [
@@ -36,6 +64,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2"
   },
-  "peerDependencies": {},
-  "dependencies": {}
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "core-js": "^3.37.1"
+  }
 }

@@ -9,8 +9,8 @@
         "chrome": "67",
         "safari": "11.1"
          },
-      "useBuiltIns": "usage",
-      "corejs": "^2.6.5"
+      // "useBuiltIns": "usage",
+      "corejs": "3.37.1"
        },
        "@babel/preset-react"
    ],
