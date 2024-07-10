@@ -22,6 +22,7 @@ export default [
       postcss({
         plugins: [],
         minimize: true,
+        extract: "gauge.css",
       }),
       babel({
         exclude: "node_modules/**",

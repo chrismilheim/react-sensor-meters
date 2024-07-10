@@ -1,14 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradientInverse from "./subcomponents/SharedGradientInverse";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const WaterPlant = (props) => {
   const {
     data,
@@ -27,12 +22,13 @@ export const WaterPlant = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -40,6 +36,14 @@ export const WaterPlant = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      {" "}
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -113,23 +117,21 @@ export const WaterPlant = (props) => {
 
         <rect x="2" y="21" width="14" height="2" />
         <rect x="2" y="26" width="14" height="2" />
-
-        <text
-          x="21"
-          y="34"
-          fill={valueColor}
-          style={{
-            "font-size": "20%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"date"}
+      />
     </div>
   );
 };

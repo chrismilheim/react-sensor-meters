@@ -67,6 +67,10 @@ export const getNeon_NO_Border = (neon) => {
   return neon !== "noBorder" || neon === undefined;
 };
 
+export const getRandomSvgId = () => {
+  return (Math.random() + 1).toString(36).substring(8);
+};
+
 export default {
   changeTempToPercent,
   changeInverseToPercent,
@@ -78,4 +82,5 @@ export default {
   getFillColor,
   getNeonBorder,
   getNeon_NO_Border,
+  getRandomSvgId,
 };

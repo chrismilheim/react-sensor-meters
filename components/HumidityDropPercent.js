@@ -1,14 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const HumidityDropPercent = (props) => {
   const {
     data,
@@ -27,12 +22,13 @@ export const HumidityDropPercent = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -40,6 +36,13 @@ export const HumidityDropPercent = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -96,23 +99,21 @@ export const HumidityDropPercent = (props) => {
           fill={dotColor}
           d="M125.178,194.162c13.292,0,24.106-10.814,24.106-24.106s-10.814-24.106-24.106-24.106s-24.106,10.814-24.106,24.106   S111.886,194.162,125.178,194.162z M125.178,160.949c5.021,0,9.106,4.085,9.106,9.106s-4.085,9.106-9.106,9.106   c-5.021,0-9.106-4.085-9.106-9.106S120.156,160.949,125.178,160.949z"
         />
-
-        <text
-          x="280"
-          y="300"
-          fill={valueColor}
-          style={{
-            "font-size": "230%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}%
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-45}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-45}
+        dataType={"date"}
+      />
     </div>
   );
 };

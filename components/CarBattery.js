@@ -3,6 +3,7 @@ import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const CarBattery = (props) => {
   const {
     data,
@@ -21,12 +22,13 @@ export const CarBattery = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -34,6 +36,13 @@ export const CarBattery = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -59,7 +68,6 @@ export const CarBattery = (props) => {
             />
           </linearGradient>
         </defs>
-
         {helper.getNeonBorder(neon) ? (
           <path
             id="test"
@@ -69,7 +77,6 @@ export const CarBattery = (props) => {
         ) : (
           <React.Fragment />
         )}
-
         {helper.getNeon_NO_Border(neon) ? (
           <path
             fill={neon === "border" ? "url(#" + randomId + ")" : borderColor}
@@ -80,7 +87,6 @@ export const CarBattery = (props) => {
         ) : (
           <React.Fragment />
         )}
-
         <path
           fill={dotColor}
           d="M77.799,251.572v8c0,4.97,4.029,9,9,9s9-4.03,9-9v-8h8c4.971,0,9-4.03,9-9s-4.029-9-9-9h-8v-8c0-4.97-4.029-9-9-9   s-9,4.03-9,9v8h-8c-4.971,0-9,4.03-9,9s4.029,9,9,9H77.799z"
@@ -101,22 +107,23 @@ export const CarBattery = (props) => {
           fill={dotColor}
           d="M193.353,275.059c2.89,2.211,6.829,2.463,9.979,0.638l29.866-17.308l-20.193,75.858c-1.278,4.803,1.579,9.734,6.382,11.012   c0.776,0.207,1.555,0.305,2.321,0.305c3.979,0,7.619-2.659,8.691-6.687l25.782-96.854c0.937-3.518-0.339-7.253-3.23-9.464   c-2.891-2.211-6.829-2.463-9.979-0.638l-29.866,17.308l12.69-47.673c1.278-4.803-1.579-9.734-6.382-11.012   c-4.808-1.278-9.734,1.578-11.013,6.382l-18.279,68.669C189.186,269.112,190.461,272.848,193.353,275.059z"
         />
-        <text
-          x="160"
-          y="465"
-          fill={valueColor}
-          style={{
-            "font-size": "280%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}%
-        </text>
       </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-45}
+        dataType={"data"}
+      />
+
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"date"}
+      />
     </div>
   );
 };

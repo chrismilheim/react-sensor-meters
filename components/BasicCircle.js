@@ -3,6 +3,7 @@ import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const BasicCircle = (props) => {
   const {
     data,
@@ -21,12 +22,13 @@ export const BasicCircle = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -34,6 +36,14 @@ export const BasicCircle = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      {" "}
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -80,23 +90,21 @@ export const BasicCircle = (props) => {
         ) : (
           <React.Fragment />
         )}
-
-        <text
-          x="470"
-          y="450"
-          fill={valueColor}
-          style={{
-            "font-size": "400%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"date"}
+      />
     </div>
   );
 };

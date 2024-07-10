@@ -1,14 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradient from "./subcomponents/SharedGradient";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const TempSimple = (props) => {
   const {
     data,
@@ -27,12 +22,13 @@ export const TempSimple = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -40,6 +36,13 @@ export const TempSimple = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -83,23 +86,23 @@ export const TempSimple = (props) => {
         ) : (
           <React.Fragment />
         )}
-
-        <text
-          x="130"
-          y="170"
-          fill={valueColor}
-          style={{
-            "font-size": "80%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}°
-        </text>
       </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-20}
+        dataType={"data"}
+      />
+
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        top={-40}
+        dataType={"date"}
+      />
     </div>
   );
 };

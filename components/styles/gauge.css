@@ -2,39 +2,42 @@
   transition: 0.3s;
   width: 290px;
   text-align: center;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   background-color: rgba(43, 42, 42, 0.627);
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
+  max-height: 350px;
 }
 
 .sensorCardSmall {
   transition: 0.3s;
   width: 120px;
   text-align: center;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   background-color: rgba(43, 42, 42, 0.627);
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
+  max-height: 190px;
 }
 
 .sensorCardLarge {
   transition: 0.3s;
-  width: 490px;
+  width: 390px;
   text-align: center;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   background-color: rgba(43, 42, 42, 0.627);
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
+  max-height: 800px;
 }
 
 .addDropShadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.59);
 }
 
-.sensorCardMedium:hover {
+/* .sensorCardMedium:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 
 .tagContainer {
   padding: 2px 16px;
@@ -42,7 +45,7 @@
 }
 
 #Layer_1 {
-  margin-right: 15px;
+  /* margin-right: 15px; */
 }
 
 .sensorTransition {
@@ -54,4 +57,11 @@
   transform: scale(1.3);
   -ms-transform: scale(1.3);
   -webkit-transform: scale(1.3);
+}
+
+#labelDisplay {
+  font-size: 1.5em; /* Custom font size */
+  font-weight: bold; /* Custom font weight */
+  margin: 1rem 0; /* Custom margin */
+  line-height: 1.5; /* Custom line height */
 }

@@ -3,7 +3,7 @@ import "../styles/gauge.css";
 import * as helper from "./helperFunctions.js";
 //let testArr = [2, 3, 4, 5, 6];
 
-const SharedGradient = (props) => {
+export const SharedGradient = (props) => {
   const {
     data,
     animate,

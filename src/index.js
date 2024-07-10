@@ -12,10 +12,13 @@ import CarBattery from "../components/CarBattery";
 import BasicCircle from "../components/BasicCircle";
 import BasicRectangle from "../components/BasicRectangle";
 import Database from "../components/Database";
-import * as helper from "../components/subcomponents/helperFunctions.js";
+import BasicList from "../components/BasicList";
+import BasicNumber from "../components/BasicNumber";
 
+import * as helper from "../components/subcomponents/helperFunctions.js";
 import SharedGradient from "../components/subcomponents/SharedGradient";
 import LabelDisplay from "../components/subcomponents/LabelDisplay";
+import DataDisplay from "../components/subcomponents/DataDisplay";
 
 export {
   TempLines,
@@ -32,7 +35,10 @@ export {
   BasicCircle,
   BasicRectangle,
   Database,
+  BasicList,
+  BasicNumber,
   LabelDisplay,
+  DataDisplay,
   SharedGradient,
   helper,
 };

@@ -1,14 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useContext,
-  useReducer,
-} from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/gauge.css";
 import * as helper from "./subcomponents/helperFunctions.js";
 import SharedGradientInverse from "./subcomponents/SharedGradientInverse";
 import LabelDisplay from "./subcomponents/LabelDisplay";
+import DataDisplay from "./subcomponents/DataDisplay";
 export const H2ODrop = (props) => {
   const {
     data,
@@ -27,12 +22,13 @@ export const H2ODrop = (props) => {
     labelText,
     topEndDataLimit,
     borderColor,
+    date,
   } = props;
 
   const [randomId, setRandomId] = useState("");
 
   useEffect(() => {
-    setRandomId((Math.random() + 1).toString(36).substring(8));
+    setRandomId(helper.getRandomSvgId());
   }, []);
 
   return (
@@ -40,6 +36,13 @@ export const H2ODrop = (props) => {
       className={helper.getCardSize(gaugeSize)}
       style={helper.getCardColor(cardColor)}
     >
+      <div class="tagContainer">
+        <LabelDisplay
+          labelColor={labelColor}
+          labelText={labelText}
+          gaugeSize={gaugeSize}
+        />
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
@@ -103,23 +106,22 @@ export const H2ODrop = (props) => {
           fill={dotColor}
           d="M235.5,351h4c10.752,0,19.5-8.748,19.5-19.5s-8.748-19.5-19.5-19.5h-8c-8.547,0-15.5,6.953-15.5,15.5   c0,4.143,3.357,7.5,7.5,7.5s7.5-3.357,7.5-7.5c0-0.275,0.225-0.5,0.5-0.5h8c2.481,0,4.5,2.019,4.5,4.5s-2.019,4.5-4.5,4.5h-4   c-10.752,0-19.5,8.748-19.5,19.5v12c0,4.143,3.357,7.5,7.5,7.5h28c4.143,0,7.5-3.357,7.5-7.5s-3.357-7.5-7.5-7.5H231v-4.5   C231,353.018,233.018,351,235.5,351z"
         />
-
-        <text
-          x="400"
-          y="400"
-          fill={valueColor}
-          style={{
-            "font-size": "355%",
-            "font-weight": "bold",
-            opacity: "0.8",
-          }}
-        >
-          {data}
-        </text>
-      </svg>
-      <div class="tagContainer">
-        <LabelDisplay labelColor={labelColor} labelText={labelText} />
-      </div>
+      </svg>{" "}
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={data}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"data"}
+      />
+      <DataDisplay
+        labelColor={labelColor}
+        labelText={date}
+        gaugeSize={gaugeSize}
+        gaugeSize={gaugeSize}
+        top={-50}
+        dataType={"date"}
+      />
     </div>
   );
 };
