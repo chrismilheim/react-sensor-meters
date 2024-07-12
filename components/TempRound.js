@@ -95,14 +95,14 @@ export const TempLines = (props) => {
         labelColor={labelColor}
         labelText={data}
         gaugeSize={gaugeSize}
-        top={-20}
+        top={-25}
         dataType={"data"}
       />
       <DataDisplay
         labelColor={labelColor}
         labelText={date}
         gaugeSize={gaugeSize}
-        top={-20}
+        top={-45}
         dataType={"date"}
       />
     </div>
