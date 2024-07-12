@@ -7,6 +7,7 @@
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
   max-height: 350px;
+  min-height: 350px;
 }
 
 .sensorCardSmall {
@@ -18,6 +19,7 @@
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
   max-height: 190px;
+  min-height: 190px;
 }
 
 .sensorCardLarge {
@@ -28,7 +30,8 @@
   background-color: rgba(43, 42, 42, 0.627);
   border-radius: 3px;
   font-family: "Roboto", sans-serif;
-  max-height: 800px;
+  max-height: 550px;
+  min-height: 550px;
 }
 
 .addDropShadow {
@@ -63,5 +66,12 @@
   font-size: 1.5em; /* Custom font size */
   font-weight: bold; /* Custom font weight */
   margin: 1rem 0; /* Custom margin */
+  line-height: 1.5; /* Custom line height */
+}
+
+#dataDisplay {
+  font-size: 1.5em; /* Custom font size */
+  font-weight: bold; /* Custom font weight */
+  margin: 1.3rem 0; /* Custom margin */
   line-height: 1.5; /* Custom line height */
 }

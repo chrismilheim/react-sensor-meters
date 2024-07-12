@@ -39,6 +39,7 @@ const DataDisplay = (props) => {
 
   return (
     <h4
+      id="dataDisplay"
       style={{
         color: labelColor,
         fontSize: fontSize,
