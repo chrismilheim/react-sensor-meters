@@ -7,18 +7,23 @@ const LabelDisplay = (props) => {
   let fontSize;
   switch (gaugeSize) {
     case "small":
-      fontSize = "12px";
+      fontSize = "8px";
       break;
     case "medium":
-      fontSize = "16px";
+      fontSize = "10px";
       break;
     case "large":
-      fontSize = "20px";
+      fontSize = "12px";
       break;
     default:
-      fontSize = "16px"; // Default size
+      fontSize = "10px"; // Default size
       break;
   }
+
+  const truncatedLabelText =
+    labelText && labelText.length > 34
+      ? `${labelText.slice(0, 34)}...`
+      : labelText;
 
   return (
     <h4
@@ -30,7 +35,7 @@ const LabelDisplay = (props) => {
         marginBottom: "16px",
       }}
     >
-      {labelText === undefined ? "" : labelText}
+      {truncatedLabelText === undefined ? "" : truncatedLabelText}
     </h4>
   );
 };
